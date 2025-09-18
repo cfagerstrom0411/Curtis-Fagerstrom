@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-colorA: #dcd103; /*#dc030a;*/
+    --primary-colorB: #dc030a;
+    --primary-color-dark: rgb(135, 6, 12);
+    --text-dark: #0a0a0a;
+    --text-light:#737373;
+    --extra-light: #e5e5e5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "oswald", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section_container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section_header {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.section_description {
+    color: var(--text-light);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    color: var(--white);
+    border-radius: 2px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn_primary {
+    background-color: var(--primary-colorB);
+}
+
+.btn_primary:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.btn_secondary {
+    background-color: transparent;
+    border: 1px solid var(--white);
+}
+
+.btn_secondary:hover {
+    background-color: var(--primary-colorB);
+    border-color: var(--primary-colorB);
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3;
+
+    font-size: 1.5rem;
+    font-family: var(--header-font);
+    white-space: nowrap;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    background-color: var(--text-dark);
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav_bar {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+}
+
+.nav_header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--text-dark);
+}
+
+.nav_logo img {
+    max-width: 70px;
+}
+
+.nav_menu_btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor:pointer;
+}
+
+.nav_links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--text-dark);
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateY(-100%);
+}
+
+.nav_links.open {
+    transform: translateY(0);
+}
+
+.nav_links a {
+    font-size: 1.1rem;
+    font-family: var(--header-font);
+    white-space: nowrap;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.nav_links a:hover {
+    color: var(--primary-colorB);
+}
+
+.header {
+    background-image: linear-gradient(
+        to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.8)
+    ), 
+    url("images/communitylunch2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header_container {
+    padding-block: 10rem;
+    display: grid;
+}
+
+.header_content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    line-height: 5rem;
+    color: var(--primary-colorA);
+}
+
+.header_content h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--header-font);
+    line-height: 3rem;
+    color: var(--white);
+}
+
+.header_content p {
+    margin-bottom: 2rem;
+    color: var(--extra-light);
+}
+
+.about_header {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+}
+
+.about_header .section_header {
+    font-size: 3rem;
+}
+
+.about_header .section_description {
+    max-width: 350px;
+    margin-inline: auto;
+}
+
+.about_grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 4rem;
+}
+
+.about_card h4 {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 1rem;
+    padding-top: 4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+}
+
+.about_card h4::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 6rem;
+    line-height: 6rem;
+    color: var(--text-dark);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.about_card:nth-child(1) h4::before{
+    content: "01";
+}
+
+.about_card:nth-child(2) h4::before{
+    content: "02";
+}
+
+.about_card:nth-child(3) h4::before{
+    content: "03";
+}
+
+.about_card p {
+    color: var(--text-light);
+}
+
+.session {
+    display: grid;
+}
+
+.session_card {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.session_card:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/history2.jpg");
+}
+
+.session_card:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/us.jpg");
+}
+
+.session_card:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/faith.jpg");
+}
+
+.session_card:nth-child(4) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/mission3.jpg");
+}
+
+.session_card:nth-child(5) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/communion_img.jpg");
+}
+
+.session_card:nth-child(6) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/watch.png");
+}
+
+.session_card h4 {
+    position: relative;
+    isolation: isolate;
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--header-font);
+    color: var(--white);
+}
+
+.session_card h4::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -5px;
+    height: 25px;
+    aspect-ratio: 1;
+    background-color: var(--primary-colorB);
+    z-index: -1;
+}
+
+.session_card p {
+    max-width: 350px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    color: var(--extra-light);
+}
+
+.trainer_grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.trainer_card img {
+    margin-bottom: 1rem;
+}
+
+.trainer_card h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.trainer_card p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.membership {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/insidechurch1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align:center;
+    
+}
+
+.membership_container .section_header {
+    color: var(--white);
+    padding-bottom: 3.1rem;
+}
+
+.membership_container p {
+    color: var(--white);
+    
+}
+
+.swiper {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+    width: 100%
+}
+
+.client_card {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.client_card > div {
+    font-size: 8rem;
+    line-height: 2rem;
+    color: var(--primary-colorA);
+    opacity: 0.5;
+}
+
+.client_card p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.client_card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-colorB);
+}
+
+/*footer*/
+
+footer {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color:#fff;
+    background-color: #000;
+    padding: 60px 0;
+ }
+
+
+@media (width > 540px) {
+    .about_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .session_card {
+        padding: 7rem 2rem;
+    }
+
+    .trainer_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .membership_container .section_header {
+        color: var(--white);
+        font-size: 3rem;
+        padding-bottom: 3.1rem;
+    }
+    
+    .membership_container p {
+        color: var(--white);
+        font-size: 1.1rem;
+    }
+}
+
+@media (width > 768px) {
+   nav {
+    position: static;
+    padding: 1.5rem 1rem;
+   } 
+
+   .nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+   }
+
+   .nav_header {
+    padding: 0;
+    background-color: transparent;
+   }
+
+   .nav_logo img {
+    max-width: 120px;
+   }
+
+   .nav_menu_btn {
+    display: none;
+   }
+
+   .nav_links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    transform: none;
+    z-index: 1;
+   }
+
+   .header_container {
+    padding-block: 12rem;
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   .header_content {
+    grid-column: 2/3;
+   }
+
+   .about_header {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+   }
+
+   .about_header .section_header {
+    text-align: right;
+   }
+
+   .about_header .section_description {
+    text-align: left;
+    margin-inline-start: unset;
+   }
+
+   .about_grid {
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+   .session {
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+   .session_card {
+    padding: 10rem 2rem;
+   }
+
+   .trainer_grid {
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+   .membership_container .section_header {
+    color: var(--white);
+    font-size: 5rem;
+    padding-bottom: 4rem;
+}
+
+.membership_container p {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+}
+
+@media (width > 1024px) {
+    .trainer_grid {
+        gap: 2rem;
+    }
+}
